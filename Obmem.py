@@ -5,12 +5,13 @@ import requests
 import json
 from tkinter import*
 from tkinter import messagebox as mb
+from tkinter import ttk
 
 from bottle import response
 
 
 def exchange():
-    code=entry.get()
+    code=combobox.get()
 
     if code:
         try:
@@ -31,10 +32,13 @@ def exchange():
 window=Tk()# создаем оконный интерфейс
 window.title ("Курсы обмена валют")
 window.geometry("360x180")
-Label(text="Введите код валюты").pack(padx=10, pady=10)# метка безымянная
+Label(text="Выберите код валюты").pack(padx=10, pady=10)# метка безымянная
+curses=["RUB", "EUR", "GBR", "JPY", "CNY", "KZT", "UZS", "CHF", "AED", "CAD"]
+combobox=ttk.Combobox(values=curses)
+combobox.pack(padx=10, pady=10)
 
-entry=Entry()# поле ввода Entry
-entry.pack(padx=10, pady=10)
+# entry=Entry()# поле ввода Entry
+# entry.pack(padx=10, pady=10)
 
 Button(text="Получить курс обмена к доллару", command=exchange).pack(padx=10, pady=10)
 
