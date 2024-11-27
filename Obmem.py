@@ -28,14 +28,6 @@ def exchange():
         mb.showwarning("Внимание!", "Введите код валюты!")
 
 
-# import pprint# функция pprint является основной функцией модуля и позволяет красиво выводить данные на экран
-
-# result=requests.get("https://open.er-api.com/v6/latest/USD")
-# data=json.loads(result.text)
-# p=pprint.PrettyPrinter(indent=4)# indent, количество отступов
-
-# p.pprint(data)
-
 window=Tk()# создаем оконный интерфейс
 window.title ("Курсы обмена валют")
 window.geometry("360x180")
